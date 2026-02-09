@@ -70,7 +70,16 @@ class Config:
         Returns:
             True if key exists, False otherwise
         """
-        return self.get(key) is not None
+        keys = key.split(".")
+        value = self._config
+        
+        for k in keys:
+            if isinstance(value, dict) and k in value:
+                value = value[k]
+            else:
+                return False
+        
+        return True
     
     def to_dict(self) -> Dict[str, Any]:
         """

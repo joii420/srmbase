@@ -55,6 +55,12 @@ class TestConfig:
         config = Config()
         assert config.has("nonexistent") is False
     
+    def test_has_key_with_none_value(self):
+        """Test checking for key with None value."""
+        config = Config({"key": None})
+        assert config.has("key") is True
+        assert config.get("key") is None
+    
     def test_update(self):
         """Test updating configuration."""
         config = Config({"key1": "value1"})
