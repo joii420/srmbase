@@ -45,6 +45,13 @@ class TestConfig:
         config.set("parent.child", "value")
         assert config.get("parent.child") == "value"
     
+    def test_set_nested_key_with_conflict(self):
+        """Test setting nested key when intermediate key is not a dict."""
+        config = Config({"parent": "string_value"})
+        with pytest.raises(ValueError) as exc_info:
+            config.set("parent.child", "value")
+        assert "not a dictionary" in str(exc_info.value)
+    
     def test_has_existing_key(self):
         """Test checking for existing key."""
         config = Config({"key": "value"})

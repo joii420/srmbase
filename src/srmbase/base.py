@@ -1,6 +1,6 @@
 """Base entity class for SRM systems."""
 
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any, Dict, Optional
 
 
@@ -10,8 +10,8 @@ class BaseEntity:
     
     Attributes:
         id: Unique identifier for the entity
-        created_at: Timestamp when the entity was created
-        updated_at: Timestamp when the entity was last updated
+        created_at: Timestamp when the entity was created (UTC timezone-aware)
+        updated_at: Timestamp when the entity was last updated (UTC timezone-aware)
     """
     
     def __init__(self, id: Optional[str] = None):
@@ -22,8 +22,8 @@ class BaseEntity:
             id: Optional unique identifier. If not provided, one should be generated.
         """
         self.id = id
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        self.created_at = datetime.now(timezone.utc)
+        self.updated_at = datetime.now(timezone.utc)
     
     def to_dict(self) -> Dict[str, Any]:
         """
@@ -40,7 +40,7 @@ class BaseEntity:
     
     def update(self) -> None:
         """Update the entity's updated_at timestamp."""
-        self.updated_at = datetime.now()
+        self.updated_at = datetime.now(timezone.utc)
     
     def __repr__(self) -> str:
         """Return a string representation of the entity."""

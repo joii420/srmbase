@@ -56,6 +56,11 @@ class Config:
         for k in keys[:-1]:
             if k not in config:
                 config[k] = {}
+            elif not isinstance(config[k], dict):
+                raise ValueError(
+                    f"Cannot set nested key '{key}': "
+                    f"intermediate key '{k}' is not a dictionary"
+                )
             config = config[k]
         
         config[keys[-1]] = value
