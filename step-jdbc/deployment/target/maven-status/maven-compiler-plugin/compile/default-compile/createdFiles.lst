@@ -1,0 +1,6 @@
+com\step\jdbc\deployment\StepJdbcProcessor.class
+com\step\jdbc\deployment\DynamicClassGeneratorMain.class
+META-INF\quarkus-build-steps.list
+META-INF\quarkus-javadoc.properties
+com\step\jdbc\deployment\DynamicClassLoader.class
+com\step\jdbc\deployment\StepJdbcProcessor$$accessor.class

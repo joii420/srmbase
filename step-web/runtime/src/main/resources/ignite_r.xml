@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                          http://www.springframework.org/schema/beans/spring-beans.xsd
+                          http://www.springframework.org/schema/util
+                          http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean class="org.apache.ignite.configuration.IgniteConfiguration">
+<!--    <property name="failureDetectionTimeout" value="100"/>-->
+        <property name="discoverySpi">
+            <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
+                <!--                <property name="localAddress" value="172.16.40.206"/>-->
+                <!--                <property name="localPort" value="20800"/>-->
+                <!--                <property name="localPortRange" value="50"/>-->
+                <!--                <property name="joinTimeout" value="5"/>-->
+                <property name="connectionRecoveryTimeout" value="0"/>
+                <property name="ipFinder">
+                    <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.multicast.TcpDiscoveryMulticastIpFinder">
+                        <!--                    <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder">-->
+                        <!--网段配置-->
+                        <!--                        <property name="multicastGroup" value="172.16.40.206"/>-->
+                        <!--                        <property name="multicastPort" value="20800"/>-->
+                        <!--                        <property name="responseWaitTime" value="10000"/>-->
+                        <!--ip配置-->
+                        <property name="addresses">
+                            <list>
+                                <value>172.16.18.41</value>
+                                <value>172.16.40.100</value>
+                                <value>172.16.40.143</value>
+
+                                <value>172.16.18.56</value>
+                                <value>172.16.40.206</value>
+                                <value>172.16.40.143</value>
+                            </list>
+                        </property>
+                    </bean>
+                </property>
+            </bean>
+        </property>
+
+        <property name="cacheConfiguration">
+            <list>
+                <bean class="org.apache.ignite.configuration.CacheConfiguration">
+                    <property name="name" value="__vertx.*"/>
+                    <property name="cacheMode" value="REPLICATED"/>
+                    <property name="atomicityMode" value="ATOMIC"/>
+                    <property name="writeSynchronizationMode" value="FULL_SYNC"/>
+                </bean>
+                <bean class="org.apache.ignite.configuration.CacheConfiguration">
+                    <property name="name" value="*"/>
+                    <property name="cacheMode" value="PARTITIONED"/>
+                    <property name="backups" value="1"/>
+                    <property name="readFromBackup" value="false"/>
+                    <property name="atomicityMode" value="ATOMIC"/>
+                    <property name="affinity">
+                        <bean class="org.apache.ignite.cache.affinity.rendezvous.RendezvousAffinityFunction">
+                            <property name="partitions" value="128"/>
+                        </bean>
+                    </property>
+                    <property name="writeSynchronizationMode" value="FULL_SYNC"/>
+                </bean>
+            </list>
+        </property>
+
+        <property name="gridLogger">
+            <bean class="io.vertx.spi.cluster.ignite.impl.VertxLogger"/>
+        </property>
+
+        <property name="metricsLogFrequency" value="0"/>
+    </bean>
+</beans>

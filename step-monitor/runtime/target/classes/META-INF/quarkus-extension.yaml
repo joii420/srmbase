@@ -1,0 +1,15 @@
+---
+name: "Step Monitor"
+metadata:
+  built-with-quarkus-core: "3.2.9.Final"
+  minimum-java-version: "11"
+  extension-dependencies:
+  - "io.quarkus:quarkus-arc"
+  - "io.quarkus:quarkus-core"
+  - "io.quarkus:quarkus-opentelemetry"
+  - "io.quarkus:quarkus-vertx"
+  - "io.quarkus:quarkus-netty"
+  - "io.quarkus:quarkus-mutiny"
+  - "io.quarkus:quarkus-smallrye-context-propagation"
+  - "io.quarkus:quarkus-grpc-common"
+artifact: "com.step:step-monitor::jar:2.0.0.MONITOR"

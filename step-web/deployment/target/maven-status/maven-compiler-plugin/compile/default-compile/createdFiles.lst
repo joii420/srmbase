@@ -1,0 +1,4 @@
+com\step\web\deployment\StepWebProcessor$$accessor.class
+com\step\web\deployment\StepWebProcessor.class
+META-INF\quarkus-build-steps.list
+META-INF\quarkus-javadoc.properties

@@ -1,0 +1,4 @@
+META-INF\quarkus-build-steps.list
+META-INF\quarkus-javadoc.properties
+com\step\websocket\deployment\StepWebsocketProcessor.class
+com\step\websocket\deployment\StepWebsocketProcessor$$accessor.class

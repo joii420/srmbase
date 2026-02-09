@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Annotation profile for step-quarkus" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../../version240821/repository/io/quarkus/quarkus-extension-processor/3.2.9.Final/quarkus-extension-processor-3.2.9.Final.jar" />
+          <entry name="$PROJECT_DIR$/../../version240821/repository/org/jboss/jdeparser/jdeparser/2.0.3.Final/jdeparser-2.0.3.Final.jar" />
+          <entry name="$PROJECT_DIR$/../../version240821/repository/org/jsoup/jsoup/1.15.3/jsoup-1.15.3.jar" />
+          <entry name="$PROJECT_DIR$/../../version240821/repository/com/github/javaparser/javaparser-core/3.25.3/javaparser-core-3.25.3.jar" />
+          <entry name="$PROJECT_DIR$/../../version240821/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar" />
+          <entry name="$PROJECT_DIR$/../../version240821/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar" />
+          <entry name="$PROJECT_DIR$/../../version240821/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar" />
+        </processorPath>
+        <module name="step-camel-deployment" />
+        <module name="step-start" />
+        <module name="step-jdbc-deployment" />
+        <module name="step-monitor" />
+        <module name="step-mq-deployment" />
+        <module name="step-web" />
+        <module name="step-api" />
+        <module name="step-graphql" />
+        <module name="step-quartz" />
+        <module name="step-camel" />
+        <module name="step-graphql-deployment" />
+        <module name="step-websocket" />
+        <module name="step-qute-deployment" />
+        <module name="step-monitor-deployment" />
+        <module name="step-web-deployment" />
+        <module name="step-qute" />
+        <module name="step-gateway" />
+        <module name="step-mq" />
+        <module name="step-start-deployment" />
+        <module name="step-api-deployment" />
+        <module name="step-websocket-deployment" />
+        <module name="step-auto" />
+        <module name="step-cache-deployment" />
+        <module name="step-gateway-deployment" />
+        <module name="step-cache" />
+        <module name="step-jdbc" />
+        <module name="step-quartz-deployment" />
+        <module name="step-auto-deployment" />
+      </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="step-log4j" />
+        <module name="step-tool" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="step-api" options="-parameters -parameters" />
+      <module name="step-api-deployment" options="-parameters -parameters" />
+      <module name="step-api-parent" options="-parameters" />
+      <module name="step-auto" options="-parameters -parameters" />
+      <module name="step-auto-deployment" options="-parameters -parameters" />
+      <module name="step-auto-parent" options="-parameters" />
+      <module name="step-cache" options="-parameters -parameters" />
+      <module name="step-cache-deployment" options="-parameters -parameters" />
+      <module name="step-cache-parent" options="-parameters" />
+      <module name="step-camel" options="-parameters -parameters" />
+      <module name="step-camel-deployment" options="-parameters -parameters" />
+      <module name="step-camel-parent" options="-parameters" />
+      <module name="step-gateway" options="-parameters -parameters" />
+      <module name="step-gateway-deployment" options="-parameters -parameters" />
+      <module name="step-gateway-parent" options="-parameters" />
+      <module name="step-graphql" options="-parameters -parameters" />
+      <module name="step-graphql-deployment" options="-parameters -parameters" />
+      <module name="step-graphql-parent" options="-parameters" />
+      <module name="step-jdbc" options="-parameters -parameters" />
+      <module name="step-jdbc-deployment" options="-parameters -parameters" />
+      <module name="step-jdbc-parent" options="-parameters" />
+      <module name="step-log4j" options="-parameters" />
+      <module name="step-monitor" options="-parameters -parameters" />
+      <module name="step-monitor-deployment" options="-parameters -parameters" />
+      <module name="step-monitor-parent" options="-parameters" />
+      <module name="step-mq" options="-parameters -parameters" />
+      <module name="step-mq-deployment" options="-parameters -parameters" />
+      <module name="step-mq-parent" options="-parameters" />
+      <module name="step-quarkus" options="-parameters" />
+      <module name="step-quartz" options="-parameters -parameters" />
+      <module name="step-quartz-deployment" options="-parameters -parameters" />
+      <module name="step-quartz-parent" options="-parameters" />
+      <module name="step-qute" options="-parameters -parameters" />
+      <module name="step-qute-deployment" options="-parameters -parameters" />
+      <module name="step-qute-parent" options="-parameters" />
+      <module name="step-start" options="-parameters -parameters" />
+      <module name="step-start-deployment" options="-parameters -parameters" />
+      <module name="step-start-parent" options="-parameters" />
+      <module name="step-tool" options="-parameters" />
+      <module name="step-web" options="-parameters -parameters" />
+      <module name="step-web-deployment" options="-parameters -parameters" />
+      <module name="step-web-parent" options="-parameters" />
+      <module name="step-websocket" options="-parameters -parameters" />
+      <module name="step-websocket-deployment" options="-parameters -parameters" />
+      <module name="step-websocket-parent" options="-parameters" />
+    </option>
+  </component>
+</project>

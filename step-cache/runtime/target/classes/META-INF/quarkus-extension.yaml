@@ -1,0 +1,23 @@
+---
+name: "Step Cache"
+metadata:
+  built-with-quarkus-core: "3.2.9.Final"
+  minimum-java-version: "17"
+  extension-dependencies:
+  - "io.quarkus:quarkus-arc"
+  - "io.quarkus:quarkus-core"
+  - "io.quarkus:quarkus-redis-client"
+  - "io.quarkus:quarkus-vertx"
+  - "io.quarkus:quarkus-netty"
+  - "io.quarkus:quarkus-mutiny"
+  - "io.quarkus:quarkus-smallrye-context-propagation"
+  - "io.quarkus:quarkus-jackson"
+  - "io.quarkus:quarkus-resteasy-reactive-jackson"
+  - "io.quarkus:quarkus-resteasy-reactive"
+  - "io.quarkus:quarkus-resteasy-reactive-common"
+  - "io.quarkus:quarkus-vertx-http"
+  - "io.quarkus:quarkus-jsonp"
+  - "io.quarkus:quarkus-resteasy-reactive-jackson-common"
+  - "com.step:step-api"
+  - "io.quarkus:quarkus-config-yaml"
+artifact: "com.step:step-cache::jar:2.0.0.CACHE"

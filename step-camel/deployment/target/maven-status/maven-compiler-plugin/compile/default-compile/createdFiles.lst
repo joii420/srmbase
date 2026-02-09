@@ -1,0 +1,4 @@
+com\step\camel\deployment\StepCamelProcessor.class
+META-INF\quarkus-build-steps.list
+META-INF\quarkus-javadoc.properties
+com\step\camel\deployment\StepCamelProcessor$$accessor.class

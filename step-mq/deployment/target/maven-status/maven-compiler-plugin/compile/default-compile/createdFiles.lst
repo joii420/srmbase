@@ -1,0 +1,4 @@
+META-INF\quarkus-build-steps.list
+META-INF\quarkus-javadoc.properties
+com\step\quartz\deployment\StepQuartzProcessor.class
+com\step\quartz\deployment\StepQuartzProcessor$$accessor.class

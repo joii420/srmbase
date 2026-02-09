@@ -1,0 +1,4 @@
+com\step\start\deployment\StepStartProcessor$$accessor.class
+META-INF\quarkus-build-steps.list
+META-INF\quarkus-javadoc.properties
+com\step\start\deployment\StepStartProcessor.class

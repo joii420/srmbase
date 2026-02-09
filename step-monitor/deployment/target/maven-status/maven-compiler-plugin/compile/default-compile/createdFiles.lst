@@ -1,0 +1,4 @@
+META-INF\quarkus-build-steps.list
+META-INF\quarkus-javadoc.properties
+com\step\monitor\deployment\StepMonitorProcessor$$accessor.class
+com\step\monitor\deployment\StepMonitorProcessor.class

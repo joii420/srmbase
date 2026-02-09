@@ -1,0 +1,4 @@
+META-INF\quarkus-build-steps.list
+META-INF\quarkus-javadoc.properties
+com\step\graphql\deployment\StepGraphqlProcessor$$accessor.class
+com\step\graphql\deployment\StepGraphqlProcessor.class

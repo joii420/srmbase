@@ -1,0 +1,3 @@
+com\step\gateway\runtime\service\GatewayAuthAsyncServiceVertxProxyHandler.class
+com\step\gateway\runtime\service\GatewayAuthAsyncServiceVertxEBProxy.class
+com\step\gateway\runtime\service\GatewayAuthAsyncService.class

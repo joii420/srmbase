@@ -1,0 +1,4 @@
+META-INF\quarkus-build-steps.list
+META-INF\quarkus-javadoc.properties
+com\step\auto\deployment\StepAutoProcessor$$accessor.class
+com\step\auto\deployment\StepAutoProcessor.class

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    status="warn" 日志框架本身的输出日志级别，可以修改为debug
+    monitorInterval="5" 自动加载配置文件的间隔时间，不低于 5秒；生产环境中修改配置文件，是热更新，无需重启应用
+ -->
+<Configuration status="WARN">
+    <!--
+    集中配置属性进行管理
+    使用时通过:${name}
+    -->
+    <properties>
+        <property name="LOG_HOME">logs</property>
+    </properties>
+
+    <!-- 日志处理 -->
+    <Appenders>
+        <File fileName="${LOG_HOME}/step-log.log"
+              filePattern="${LOG_HOME}/step-log-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] [%-5level] %c{36}:%L --- %m%n"/>
+        </File>
+        <RollingFile name="rollingFile" fileName="${LOG_HOME}/step-log.log"
+                     filePattern="${LOG_HOME}/step-log-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] [%-5level] %c{36}:%L --- %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <!-- 控制台输出 appender，SYSTEM_OUT输出黑色，SYSTEM_ERR输出红色 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] [%-5level] %c{36}:%L --- %m%n"/>
+        </Console>
+        <!-- 日志文件输出 appender -->
+        <!--        <File name="file" fileName="${LOG_HOME}/myfile.log">-->
+        <!--            &lt;!&ndash;<PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] %l %c{36} - %m%n" />&ndash;&gt;-->
+        <!--            <PatternLayout pattern="%d %p %c{1.} [%t] %m%n" />-->
+        <!--        </File>-->
+        <!--        &lt;!&ndash; 日志文件输出 appender &ndash;&gt;-->
+        <!--        <File name="File" fileName="${LOG_HOME}/myfile.log">-->
+        <!--            &lt;!&ndash;<PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] %l %c{36} - %m%n" />&ndash;&gt;-->
+        <!--            <PatternLayout pattern="%d %p %c{1.} [%t] %m%n" />-->
+        <!--        </File>-->
+
+        <Async name="Async">
+            <AppenderRef ref="rollingFile"/>
+        </Async>
+    </Appenders>
+
+    <!-- logger 定义 -->
+    <Loggers>
+        <!-- 自定义 logger 对象
+            includeLocation="false" 关闭日志记录的行号信息，开启的话会严重影响异步输出的性能
+            additivity="false" 不再继承 rootlogger对象
+         -->
+        <!--        <Logger name = "com.step" level="DEBUG" additivity="false">-->
+        <!--            <AppenderRef ref="File" />-->
+        <!--        </Logger>-->
+        <Logger name="com.step" level="ERROR" additivity="false">
+            <AppenderRef ref="Async"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Logger name="com.step" level="WARN" additivity="false">
+            <AppenderRef ref="Async"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Logger name="com.step" level="INFO" additivity="false">
+            <AppenderRef ref="Async"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+<!--                <AsyncLogger name="AppLog" level="INFO" includeLocation="false" additivity="false">-->
+<!--                    <AppenderRef ref="File" />-->
+<!--                </AsyncLogger>-->
+        <!-- 使用 rootLogger 配置 日志级别 level="trace" -->
+        <Root level="INFO">
+            <!-- 指定日志使用的处理器 -->
+            <AppenderRef ref="Async"/>
+            <AppenderRef ref="File"/>
+            <AppenderRef ref="rollingFile" />
+            <AppenderRef ref="Console"/>
+            <!-- 使用异步 appender -->
+            <!--            <AppenderRef ref="Async" />-->
+        </Root>
+    </Loggers>
+</Configuration>

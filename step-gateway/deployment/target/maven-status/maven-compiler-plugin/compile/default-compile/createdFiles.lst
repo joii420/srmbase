@@ -1,0 +1,4 @@
+META-INF\quarkus-build-steps.list
+META-INF\quarkus-javadoc.properties
+com\step\gateway\deployment\StepGatewayProcessor$$accessor.class
+com\step\gateway\deployment\StepGatewayProcessor.class
