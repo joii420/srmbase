@@ -76,6 +76,17 @@ class TestConfig:
         assert config.get("key1") == "value1"
         assert config.get("key2") == "value2"
     
+    def test_to_dict_deep_copy(self):
+        """Test that to_dict returns a deep copy."""
+        config = Config({"nested": {"key": "value"}})
+        config_dict = config.to_dict()
+        
+        # Mutate the returned dict
+        config_dict["nested"]["key"] = "modified"
+        
+        # Original config should be unchanged
+        assert config.get("nested.key") == "value"
+    
     def test_repr(self):
         """Test config string representation."""
         config = Config({"key": "value"})

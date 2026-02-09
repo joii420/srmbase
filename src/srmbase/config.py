@@ -1,5 +1,6 @@
 """Configuration management for SRM systems."""
 
+from copy import deepcopy
 from typing import Any, Dict, Optional
 
 
@@ -91,9 +92,9 @@ class Config:
         Get the entire configuration as a dictionary.
         
         Returns:
-            Configuration dictionary
+            Deep copy of the configuration dictionary
         """
-        return self._config.copy()
+        return deepcopy(self._config)
     
     def update(self, config: Dict[str, Any]) -> None:
         """
